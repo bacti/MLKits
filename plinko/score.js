@@ -1,11 +1,13 @@
+let outputs = []
+
 function onScoreUpdate(dropPosition, bounciness, size, bucketLabel) {
-    output.push([dropPosition, bounciness, size, bucketLabel])
+    outputs.push([dropPosition, bounciness, size, bucketLabel])
 }
 
 function runAnalysis()
 {
     const testSetSize = 100
-    const [testSet, trainingSet] = splitDataSet(outs, testSetSize)
+    const [testSet, trainingSet] = splitDataSet(outputs, testSetSize)
     _.range(1, 20).forEach(k =>
     {
         const accuracy = _.chain(testSet)
