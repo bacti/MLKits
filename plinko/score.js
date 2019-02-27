@@ -1,5 +1,5 @@
 function onScoreUpdate(dropPosition, bounciness, size, bucketLabel) {
-    // Ran every time a balls drops into a bucket
+    output.push([dropPosition, bounciness, size, bucketLabel])
 }
 
 function runAnalysis()
@@ -35,4 +35,12 @@ function knn(data, point, k)
 function distance(pointA, pointB)
 {
     return Math.abs(pointA - pointB)
+}
+
+function splitDataSet(data, testCount)
+{
+    const shuffled = _.shuffle(data)
+    const testSet = _.slice(shuffled, 0, testCount)
+    const trainingSet = _.slice(shuffled, testCount)
+    return [testSet, trainingSet]
 }
