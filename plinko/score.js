@@ -9,7 +9,7 @@ function runAnalysis()
     _.range(1, 20).forEach(k =>
     {
         const accuracy = _.chain(testSet)
-            .filter(testPoint => knn(trainingSet, testPoint[0], k) === testPoint[0])
+            .filter(testPoint => knn(trainingSet, testPoint[0], k) === testPoint[3])
             .size()
             .divide(testSetSize)
             .value()
@@ -30,4 +30,9 @@ function knn(data, point, k)
         .first()
         .parseInt()
         .value()
+}
+
+function distance(pointA, pointB)
+{
+    return Math.abs(pointA - pointB)
 }
