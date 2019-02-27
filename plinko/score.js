@@ -36,7 +36,12 @@ function knn(data, point, k)
 
 function distance(pointA, pointB)
 {
-    return Math.abs(pointA - pointB)
+    return _.chain(pointA)
+        .zip(pointB)
+        .map(([u, v]) => (u - v) ** 2)
+        .sum()
+        .value() ** 0.5
+
 }
 
 function splitDataSet(data, testCount)
