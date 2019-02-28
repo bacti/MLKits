@@ -18,7 +18,7 @@ function runAnalysis()
             .size()
             .divide(testSetSize)
             .value()
-        console.log('For k of', k, 'accuracy is', accuracy)
+        console.log('For feature of', feature, 'accuracy is', accuracy)
     })
 }
 
@@ -68,4 +68,5 @@ function minMax(data, featureCount)
             clonedData[j][i] = (clonedData[j][i] - min) / (max - min)
         }
     }
+    return clonedData
 }
