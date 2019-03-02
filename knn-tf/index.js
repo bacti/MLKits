@@ -37,6 +37,6 @@ labels = tf.tensor(labels)
 testFeatures.forEach((testPoint, i) =>
 {
     const result = knn(features, labels, tf.tensor(testPoint), 10)
-    const err = (testFeatures[i][0] - result) / testFeatures[i][0]
+    const err = (testLabels[i][0] - result) / testLabels[i][0]
     console.log('Error', err * 100)
 })
