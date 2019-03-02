@@ -34,7 +34,7 @@ let { features, labels, testFeatures, testLabels } = loadCSV(
 features = tf.tensor(features)
 labels = tf.tensor(labels)
 
-testFeatures.fixedorEach((testPoint, i) =>
+testFeatures.forEach((testPoint, i) =>
 {
     const result = knn(features, labels, tf.tensor(testPoint), 10)
     const err = (testFeatures[i][0] - result) / testFeatures[i][0]
