@@ -33,5 +33,10 @@ let { features, labels, testFeatures, testLabels } = loadCSV(
 
 features = tf.tensor(features)
 labels = tf.tensor(labels)
-const result = knn(features, labels, tf.tensor(testFeatures[0]), 10)
-console.log('Guess', result, testLabels[0][0])
+
+testFeatures.fixedorEach((testPoint, i) =>
+{
+    const result = knn(features, labels, tf.tensor(testPoint), 10)
+    const err = (testFeatures[i][0] - result) / testFeatures[i][0]
+    console.log('Error', err * 100)
+})
