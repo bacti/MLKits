@@ -26,3 +26,8 @@ let { features, labels, testFeatures, testLabels } = loadCSV(
         labelColumns: ['price'],
     }
 )
+
+features = tf.tensor(features)
+labels = tf.tensor(labels)
+const result = knn(features, labels, tf.tensor(testFeatures[0]), 10)
+console.log('Guess', result, testLabels[0][0])
