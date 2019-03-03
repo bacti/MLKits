@@ -11,7 +11,3 @@ let { features, labels, testFeatures, testLabels } = loadCSV(
         labelColumns: ['mpg'],
     }
 )
-
-features = tf.tensor(features)
-labels = tf.tensor(labels)
-
