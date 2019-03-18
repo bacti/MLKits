@@ -1,6 +1,6 @@
-const fs = require('fs');
-const _ = require('lodash');
-const shuffleSeed = require('shuffle-seed');
+const fs = require("fs");
+const _ = require("lodash");
+const shuffleSeed = require("shuffle-seed");
 
 function extractColumns(data, columnNames) {
   const headers = _.first(data);
@@ -21,9 +21,9 @@ module.exports = function loadCSV(
     splitTest = false
   }
 ) {
-  let data = fs.readFileSync(filename, { encoding: 'utf-8' });
-  data = _.map(data.split('\n'), d => d.split(','));
-  data = _.dropRightWhile(data, val => _.isEqual(val, ['']));
+  let data = fs.readFileSync(filename, { encoding: "utf-8" });
+  data = _.map(data.split("\n"), d => d.split(","));
+  data = _.dropRightWhile(data, val => _.isEqual(val, [""]));
   const headers = _.first(data);
 
   data = _.map(data, (row, index) => {
@@ -36,7 +36,7 @@ module.exports = function loadCSV(
         return _.isNaN(converted) ? element : converted;
       }
 
-      const result = parseFloat(element.replace('"', ''));
+      const result = parseFloat(element.replace('"', ""));
       return _.isNaN(result) ? element : result;
     });
   });
@@ -48,8 +48,8 @@ module.exports = function loadCSV(
   labels.shift();
 
   if (shuffle) {
-    data = shuffleSeed.shuffle(data, 'phrase');
-    labels = shuffleSeed.shuffle(labels, 'phrase');
+    data = shuffleSeed.shuffle(data, "phrase");
+    labels = shuffleSeed.shuffle(labels, "phrase");
   }
 
   if (splitTest) {
