@@ -1,4 +1,4 @@
-require('@tensorflow/tfjs-node')
+require('@tensorflow/tfjs-node-gpu')
 const tf = require('@tensorflow/tfjs')
 const loadCSV = require('./load-csv')
 
