@@ -21,8 +21,7 @@ function knn(features, labels, predictionPoint, k)
         .reduce((acc, pair) => acc + pair.get(1), 0) / k
 }
 
-let { features, labels, testFeatures, testLabels } = loadCSV(
-    'kc_house_data.csv',
+let { features, labels, testFeatures, testLabels } = loadCSV('kc_house_data.csv',
     {
         shuffle: true,
         splitTest: 10,
