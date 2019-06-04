@@ -33,9 +33,11 @@ let { features, labels, testFeatures, testLabels } = loadCSV('kc_house_data.csv'
 features = tf.tensor(features)
 labels = tf.tensor(labels)
 
+const start = Date.now()
 testFeatures.forEach((testPoint, i) =>
 {
     const result = knn(features, labels, tf.tensor(testPoint), 10)
     const err = (testLabels[i][0] - result) / testLabels[i][0]
     console.log('Error', err * 100)
 })
+console.log(`Finished in {Date.now() - start} ms.`)
