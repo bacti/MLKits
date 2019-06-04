@@ -40,4 +40,4 @@ testFeatures.forEach((testPoint, i) =>
     const err = (testLabels[i][0] - result) / testLabels[i][0]
     console.log('Error', err * 100)
 })
-console.log(`Finished in {Date.now() - start} ms.`)
+console.log(`Finished in ${Date.now() - start} ms.`)
