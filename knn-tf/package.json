@@ -12,6 +12,8 @@
     "@tensorflow/tfjs-node": "^0.1.17",
     "@tensorflow/tfjs-node-gpu": "^1.0.2",
     "lodash": "^4.17.11",
-    "shuffle-seed": "^1.1.6"
+    "shuffle-seed": "^1.1.6",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
   }
 }
